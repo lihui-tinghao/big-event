@@ -3,7 +3,7 @@ $(".login a").on("click",function(){
     $(".login").hide().next().show();
 });
 $(".register a").on("click",function(){
-    $(".login").hide().next().show();
+    $(".login").show().next().hide();
 });
 //------------------------------注册功能-----------------------------------
 //表单提交--->阻止默认行为-->收集表单数据-->ajax请求
@@ -57,3 +57,19 @@ form.verify({
    }
 });
 //------------------------------登录功能-----------------------------------
+$(".login form").on("submit",function(e){
+    e.preventDefault();
+    var data = $(this).serialize();
+    $.ajax({
+        type:'POST',
+        url:'api/login',
+        data:data,
+        success: function(res){
+            layer.msg(res.message);
+            if (res.status === 0) {
+                localStorage.setItem("token",res.token);
+                location.href = './index.html';
+            }
+        }
+    });
+})

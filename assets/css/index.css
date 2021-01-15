@@ -1,0 +1,27 @@
+.layui.icon {
+    margin: 0 5px;
+    font-size: 16px;
+
+}
+.layui-bg-black {
+    padding-top: 60px;
+}
+.layui-icon-app {
+    margin-left: 20px;
+}
+.userinfo {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.text-avatar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #419488;
+    line-height: 30px;
+    border-radius: 50%;
+    text-align: center;
+}
