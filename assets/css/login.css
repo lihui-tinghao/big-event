@@ -1,0 +1,49 @@
+html body {
+    height: 100%;
+
+}
+body {
+    background-color: #5ea0f1;
+}
+.logo img {
+    margin: 20px 0 0 240px;
+}
+.box {
+    width: 400px;
+    height: 310px;
+    background-color: #f5da78;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    box-shadow: 5px 5px 5px 5px;
+}
+.title {
+    color: #000;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+}
+form {
+    margin: 0 25px;
+}
+.layui-form-item {
+    position: relative;
+}
+.layui-form-item .layui-icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.layui-form-item input {
+    padding-left: 30px;
+}
+.layui-form-item a {
+    float: right;
+}
+.register {
+    display: none;
+}
