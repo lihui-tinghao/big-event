@@ -25,3 +25,7 @@
     border-radius: 50%;
     text-align: center;
 }
+/* 默认让两个头像都隐藏 */
+.text-avatar, .layui-nav-img {
+    display: none;
+}

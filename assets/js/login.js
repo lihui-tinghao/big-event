@@ -1,9 +1,9 @@
 //------------------------------切换两个盒子-----------------------------------
 $(".login a").on("click",function(){
-    $(".login").hide().next().show();
+    $(".login").hide().siblings(".register").show();
 });
 $(".register a").on("click",function(){
-    $(".login").show().next().hide();
+    $(".register").hide().siblings(".login").show();
 });
 //------------------------------注册功能-----------------------------------
 //表单提交--->阻止默认行为-->收集表单数据-->ajax请求
@@ -62,7 +62,7 @@ $(".login form").on("submit",function(e){
     var data = $(this).serialize();
     $.ajax({
         type:'POST',
-        url:'api/login',
+        url:'/api/login',
         data:data,
         success: function(res){
             layer.msg(res.message);
