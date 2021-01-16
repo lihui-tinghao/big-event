@@ -24,7 +24,7 @@ function user() {
 }
 user();
 //---------------------------退出-------------------------------------
-$('#userinfo').on('click', function (e) {
+$('#logout').on('click', function (e) {
     e.preventDefault();
     //弹出层  询问是否退出
     layer.confirm('确定退出吗？', function (index) {
@@ -36,5 +36,4 @@ $('#userinfo').on('click', function (e) {
         //结束弹出层
         layer.close(index);
     });
-
-})
+});
