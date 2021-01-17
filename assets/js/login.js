@@ -20,7 +20,7 @@ $(".register form").on("submit",function(e){
                 //清空输入框  找到表单 转为dom对象  调用dom方法reset  重置表单
                 $(".register form")[0].reset();
                 //切换到登录的盒子
-                $(".login").hide().next().show();
+                $(".register").hide().siblings(".login").show();
             }
         }
     });

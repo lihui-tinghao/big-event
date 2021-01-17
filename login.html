@@ -44,21 +44,25 @@
     <div class="box register">
         <div class="title">大事件后台管理系统</div>
         <form class="layui-form" action="">
+            <!-- 旧密码 -->
             <div class="layui-form-item">
                 <i class="layui-icon layui-icon-username"></i>
                 <input type="text" name="username" required lay-verify="required|user" placeholder="请输入账号"
                     autocomplete="off" class="layui-input">
             </div>
+            <!-- 新密码 -->
             <div class="layui-form-item">
                 <i class="layui-icon layui-icon-password"></i>
                 <input type="password" name="password" required lay-verify="required|len" placeholder="请输入密码"
                     autocomplete="off" class="layui-input psd">
             </div>
+            <!-- 确认新密码 -->
             <div class="layui-form-item">
                 <i class="layui-icon layui-icon-password"></i>
                 <input type="password" required lay-verify="required|len|alike" placeholder="请再次输入密码" autocomplete="off"
                     class="layui-input">
             </div>
+            <!-- 按钮-->
             <div class="layui-form-item">
                 <button class="layui-btn layui-btn-fluid layui-bg-blue" lay-submit lay-filter="formDemo">注册</button>
             </div>
