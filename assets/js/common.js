@@ -17,7 +17,15 @@ $.ajaxPrefilter(function(option){
         if (res && res.status === 1 && res.message === "身份认证失败！") {
             //清除掉过期token
             localStorage.removeItem("token");
-            location.href = './login.html';
+            //页面位置不一样 跳转到登录页面路径可分开写
+            /*除了分开写 也可以直接写一个window.parent.location.href = '../login.html';
+                哪怕实在首页中  他的父级页面还是window
+            */
+            if (location.pathname ==='/index.html') {
+                location.href = './login.html';
+            }else {
+                window.parent.location.href = '../login.html';
+            }
         }
         //如果用户名重复了  
         if (res && res.status === 1) {
