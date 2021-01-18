@@ -45,7 +45,7 @@ function showPage(t) {
         count:t,   //代表的是数据总数  也就是res.total 
         limit:data.pagesize,   //每页显示几条数据
         curr:data.pagenum,  //当前页  选中
-        limis:[2,3,4,5],  //将下拉框中数据更改  和下面一行代码中limit配合使用
+        limits:[2,3,4,5],  //将下拉框中数据更改  和下面一行代码中limit配合使用
         //自定义排版
         /*
         (下面的都是代表什么?
@@ -110,6 +110,22 @@ $("#search").on('submit',function(e){
     //重新渲染一下页面
     renderArticle();
     
+});
+//-----------------------------删除-------------------------------
+$('tbody').on('click','button:contains("删除")',function(){
+    var id = $(this).data('id');
+    layer.confirm('确定删除吗？', function(index){
+        $.ajax({
+            url:'/my/article/delete/' + id,
+            success: function(res){
+                layer.msg(res.message);
+                if (res.status === 0) {
+                    renderArticle();
+                }
+            }
+        });
+        layer.close(index);
+    });
 })
 
 
