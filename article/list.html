@@ -16,32 +16,29 @@
         <div class="layui-card-header">文章列表</div>
         <div class="layui-card-body">
             <!-- 内容区一 表单搜索区 start -->
-            <form class="layui-form" action="">
+            <form class="layui-form" id="search" action="">
                 <div class="layui-form-item">
 
                     <div class="layui-inline">
                         <div class="layui-input-inline" style="width: 200px;">
-                            <select name="city" lay-verify="">
-                                <option value="">请选择一个城市</option>
-                                <option value="010">北京</option>
-                                <option value="021">上海</option>
-                                <option value="0571">杭州</option>
+                            <select id="category" lay-verify="">
+                                <option value="">请选择一个分类</option>
                             </select>
                         </div>
 
                         <div class="layui-input-inline" style="width: 200px;">
-                            <select name="city" lay-verify="">
-                                <option value="">请选择一个城市</option>
-                                <option value="010">北京</option>
-                                <option value="021">上海</option>
-                                <option value="0571">杭州</option>
+                            <select id="state" lay-verify="">
+                                <option value="">请选择一个状态</option>
+                                <option value="已发布">已发布</option>
+                                <option value="草稿">草稿</option>
+                                
                             </select>
                         </div>
                     </div>
 
                     <div class="layui-inline">
                         <div class="layui-input-inline" style="width: 100px;">
-                            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">筛选</button>
                         </div>
                     </div>
 
@@ -68,16 +65,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>静夜思</td>
-                        <td>艺术</td>
-                        <td>2021-01-13 12:39:08</td>
-                        <td>已发布</td>
-                        <td>
-                            <button type="button" class="layui-btn layui-btn-xs">编辑</button>
-                            <button type="button" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
-                        </td>
-                    </tr>
+
                 </tbody>
             </table>
             <!-- 内容区二 表格区 end -->
@@ -88,6 +76,28 @@
         </div>
     </div>
 
+
+    <!-- //文章列表模板 -->
+    <script type="text/html" id="tpl-article">
+        {{each data item}}
+        <tr>
+            <td>{{item.title}}</td>
+            <td>{{item.cate_name}}</td>
+            <td>{{item.pub_date | time}}</td>
+            <td>{{item.state}}</td>
+            <td>
+                <button type="button" class="layui-btn layui-btn-xs">编辑</button>
+                <button type="button" class="layui-btn layui-btn-xs layui-btn-danger">删除</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+    <!-- 下拉框的分类模板 -->
+    <script type="text/html" id="tpl-category">
+    {{each data item}}
+    <option value="{{item.import {  } from 'module';}}">{{item.name}}</option>
+    {{/each}}
+    </script>
 
     <script src="../assets/lib/layui/layui.all.js"></script>
     <script src="../assets/lib/jquery.js"></script>
