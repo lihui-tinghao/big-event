@@ -1,7 +1,7 @@
 // 项目通用匹配文件
 
 //项目的根路径
-var baseUrl = 'http://www.itcbc.com:8080';
+var baseUrl = 'http://localhost:3007';
 
 //通过ajaxPrefilter 配置url headers complete
 $.ajaxPrefilter(function(option){
